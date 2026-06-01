@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:foodlevel/core/theme/motion_preference.dart';
 
 class AnimatedEntry extends StatelessWidget {
   const AnimatedEntry({
@@ -14,6 +15,13 @@ class AnimatedEntry extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // Requirements: 13.2, 13.3 — when reduced motion is requested, skip the
+    // fade/translate animation entirely and render the child at its final
+    // (fully-visible, zero-offset) state immediately.
+    if (MotionPreference.disabled(context)) {
+      return child;
+    }
+
     return TweenAnimationBuilder<double>(
       tween: Tween(begin: 0, end: 1),
       duration: Duration(milliseconds: 420 + delay.inMilliseconds),

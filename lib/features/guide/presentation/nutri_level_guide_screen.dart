@@ -58,9 +58,10 @@ class _GuideHero extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final colorScheme = Theme.of(context).colorScheme;
     return DecoratedBox(
       decoration: BoxDecoration(
-        color: const Color(0xFF4C1D95),
+        color: colorScheme.tertiaryContainer,
         borderRadius: BorderRadius.circular(18),
       ),
       child: Stack(
@@ -71,7 +72,7 @@ class _GuideHero extends StatelessWidget {
             child: Icon(
               Icons.school_outlined,
               size: 142,
-              color: Colors.white.withValues(alpha: 0.08),
+              color: colorScheme.onTertiaryContainer.withValues(alpha: 0.08),
             ),
           ),
           Padding(
@@ -82,7 +83,7 @@ class _GuideHero extends StatelessWidget {
                 Text(
                   'Kenalan dengan Nutri Level A-D',
                   style: Theme.of(context).textTheme.headlineSmall?.copyWith(
-                    color: Colors.white,
+                    color: colorScheme.onTertiaryContainer,
                     fontWeight: FontWeight.w900,
                   ),
                 ),
@@ -90,7 +91,7 @@ class _GuideHero extends StatelessWidget {
                 Text(
                   'Dari paling sehat sampai yang perlu dibatasi. Dibikin singkat biar gampang dipakai saat milih makanan.',
                   style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                    color: Colors.white.withValues(alpha: 0.78),
+                    color: colorScheme.onTertiaryContainer.withValues(alpha: 0.78),
                     height: 1.35,
                   ),
                 ),
@@ -114,7 +115,7 @@ class _LevelGuideCard extends StatelessWidget {
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          FoodLevelBadge(level: level),
+          FoodLevelBadge(level: level, animateReveal: false),
           const SizedBox(width: 14),
           Expanded(
             child: Column(

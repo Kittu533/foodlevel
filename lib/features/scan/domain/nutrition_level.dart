@@ -7,6 +7,13 @@ enum NutritionLevel {
   const NutritionLevel(this.label);
 
   final String label;
+
+  static NutritionLevel fromLabel(String value) {
+    return NutritionLevel.values.firstWhere(
+      (level) => level.label == value,
+      orElse: () => NutritionLevel.c,
+    );
+  }
 }
 
 extension NutritionLevelDetails on NutritionLevel {

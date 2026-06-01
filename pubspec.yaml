@@ -38,6 +38,13 @@ dependencies:
   image_picker: ^1.2.2
   uuid: ^4.5.3
   intl: ^0.20.2
+  shared_preferences: ^2.5.5
+
+  # UI animation dependencies (Requirement 15.1–15.4)
+  flutter_animate: ^4.5.2
+  shimmer: ^3.0.0
+  lottie: ^3.3.3
+  confetti: ^0.8.0
 
 dev_dependencies:
   flutter_test:
@@ -61,7 +68,11 @@ flutter:
   # the material Icons class.
   uses-material-design: true
 
-  # To add assets to your application, add an assets section, like this:
+  # Animation assets for Lottie and other UI assets (Requirement 15.3)
+  assets:
+    - assets/animations/
+
+  # To add other assets to your application, add them here:
   # assets:
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg

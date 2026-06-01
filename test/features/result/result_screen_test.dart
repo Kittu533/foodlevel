@@ -42,6 +42,13 @@ void main() {
     );
 
     expect(find.text('Nasi Goreng'), findsWidgets);
+
+    await tester.scrollUntilVisible(
+      find.text('Top prediksi'),
+      250,
+      scrollable: find.byType(Scrollable).first,
+    );
+
     expect(find.text('Top prediksi'), findsOneWidget);
 
     await tester.scrollUntilVisible(
